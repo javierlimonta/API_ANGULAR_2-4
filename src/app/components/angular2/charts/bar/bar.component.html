@@ -1,0 +1,14 @@
+<div>
+  <button (click)="randomize()" class="btn btn-danger">RANDOMIZE</button>  <br>
+  <div style="display: block ">
+    <canvas baseChart width="400" height="200"
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+  </div>
+
+</div>

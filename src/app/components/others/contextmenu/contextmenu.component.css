@@ -1,0 +1,45 @@
+.angular2-contextmenu .dropdown-menu {
+    border: solid 1px chartreuse;
+    background-color: darkgreen;
+    padding: 0;
+}
+
+.angular2-contextmenu li {
+    display: block;
+    border-top: solid 1px chartreuse;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.angular2-contextmenu li:first-child {
+    border-top: none;
+}
+
+.angular2-contextmenu a {
+    color: chartreuse;
+    display: block;
+    padding: 0.5em 1em;
+}
+
+.angular2-contextmenu a:hover {
+    color: darkgreen;
+    background-color: chartreuse;
+}
+
+.dashboardContainer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.componentsContainer {
+    position: fixed;
+    bottom: 0;
+    top: 100px;
+    width: 100%;
+}
+
+.componentContainer {
+    overflow: auto;
+    position: absolute;
+}

@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-3">
+    <progressbar [max]="max" [value]="dynamic" class="progress progress-striped active">
+      <span style="color:white; white-space:nowrap;">{{dynamic}} / {{max}}</span>
+    </progressbar>
+  </div>
+  <div class="col-md-3">
+    <progressbar [max]="max" [value]="30" class="progress progress-striped active" type="warning">
+      <span style="color:white; white-space:nowrap;">{{30}} / {{max}}</span>
+    </progressbar>
+  </div>
+  <div class="col-md-3">
+    <progressbar [max]="max" [value]="40" class="progress progress-striped active" type="danger">
+      <span style="color:white; white-space:nowrap;">{{2}} / {{max}}</span>
+    </progressbar>
+  </div>
+  <div class="col-md-3">
+    <progressbar [max]="max" [value]="100" class="progress progress-striped active" type="success">
+      <span style="color:white; white-space:nowrap;">{{100}} / {{max}}</span>
+    </progressbar>
+  </div>
+</div>
+

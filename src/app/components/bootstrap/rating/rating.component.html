@@ -1,0 +1,25 @@
+<rating style="color: red;height: 40px" [max]="5" [readonly]="false" (onHover)="onHover($event)" (onLeave)="onLeave($event)"></rating>
+<br><hr>
+<h4 style="color: #00b0e8">Angular 2 Rating - Stars Example</h4>
+<h5>Current Rate: <b>{{currentRate}}</b></h5>
+<rating [(ngModel)]="currentRate" [max]="maxRateValue" [readonly]="isRatingReadonly"
+        (onHover)="overStarDoSomething($event)" (onLeave)="resetRatingStar($event)"
+        [titles]="['one','two','three']"></rating>
+<span class="label"
+      [ngClass]="{'label-warning': ratingPercent<30, 'label-info': ratingPercent>=30 && ratingPercent<70, 'label-success': ratingPercent>=70}"
+      [ngStyle]="{display: (overStar && !isRatingReadonly) ? 'inline' : 'none'}">{{ratingPercent}}%</span>
+<hr/>
+
+<h4 style="color: #00b0e8">Angular 2 Rating With <b>Custom icons</b></h4>
+<h5><b>(<i>Current Rate:</i> {{rateValueExample1}})</b></h5>
+<div>
+  <rating [(ngModel)]="rateValueExample1" max="10" stateOn="glyphicon-check"
+          stateOff="glyphicon-ok-circle"></rating>
+</div>
+<hr/>
+
+<h4 style="color: #00b0e8">Angular 2 Rating With <b>Custom icons</b></h4>
+<h5><b>(<i>Current Rate:</i> {{rateValueExample2}})</b></h5>
+<div>
+  <rating [(ngModel)]="rateValueExample2" [ratingStates]="ratingStatesItems"></rating>
+</div>

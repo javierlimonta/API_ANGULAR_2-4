@@ -1,0 +1,20 @@
+<accordion [closeOthers]="false">
+  <accordion-group [heading]="'Static Header, initially expanded'"
+                   [isOpen]="true"
+                   [isDisabled]="false"
+                   [panelClass]="'panel panel-primary'">
+    <label class="label label-danger">EXPANDED </label>
+  </accordion-group>
+  <accordion-group [heading]="'Static Header, initially collapse'"
+                   [isOpen]="false"
+                   [isDisabled]="false"
+                   [panelClass]="'panel panel-default'">
+    <label class="label label-danger">COLLAPSED</label>
+  </accordion-group>
+  <accordion-group [heading]="'Static Header, DISABLED & EXPANDED'"
+                   [isOpen]="true"
+                   [isDisabled]="true"
+                   [panelClass]="'panel panel-warning'">
+    <label class="label label-danger">DISABLED & EXPANDED</label>
+  </accordion-group>
+</accordion>

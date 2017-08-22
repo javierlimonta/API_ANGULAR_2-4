@@ -1,0 +1,29 @@
+<hr>
+<div class="input-group date">
+  <input type="text" [(ngModel)]="value" class="form-control input-sm" id="{{id}}" (focus)="open()"/>
+        <span class="input-group-addon" (click)="open()">
+            <span class="glyphicon-calendar glyphicon"></span>
+        </span>
+</div>
+<div class="dp-popup" *ngIf="showDatepicker">
+  <datepicker [(ngModel)]="dt" [showWeeks]="true" (selectionDone)="onSelectionDone($event)"></datepicker>
+  <div class="clearfix">
+    <div class="pull-left">
+      <button type="button" class="btn btn-sm btn-primary" (click)="today()">Today</button>
+    </div>
+    <div class="pull-right">
+      <button type="button" class="btn btn-sm btn-danger" (click)="clear()">Clear</button>
+    </div>
+  </div>
+</div>
+<hr>
+<h2>DATEPICKER ONLY</h2>
+<div class="col-md-4">
+  <datepicker align="center" [(ngModel)]="dt" [showWeeks]="true" (selectionDone)="onSelectionDone($event)"></datepicker>
+</div>
+<div class="col-md-4">
+  <datepicker align="center" [showWeeks]="true" (selectionDone)="onSelectionDone($event)"></datepicker>
+</div>
+<div class="col-md-4">
+  <datepicker align="center" [showWeeks]="true" (selectionDone)="onSelectionDone($event)"></datepicker>
+</div>

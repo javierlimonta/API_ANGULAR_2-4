@@ -1,0 +1,29 @@
+<div class="container">
+    <i *ngIf="filter.value!==''">Looking '{{filter.value | titlecase}}' in tree</i>
+    <br>
+    <input class="form-control" type="text" #filter (change)="filtrar(filter.value)" (keyup)="filtrar(filter.value)"
+           placeholder="filter nodes"/>
+    <button class="btn btn-primary" (click)="filtrar(filter.value)">Filtrar</button>
+    <button class="btn btn-success" (click)="tree.treeModel.clearFilter();">Clear Filter</button>
+    <tree-root #tree [nodes]="nodes" [focused]="true" [options]="options" (toggleExpanded)="toggleExpanded($event)"
+               (event)="eventDispatch($event)">
+
+        <ng-template #loadingTemplate><span class="font-red"><i
+                class="fa fa-spinner fa-spin"></i> Loading...</span></ng-template>
+        <ng-template #treeNodeTemplate let-node="node" let-index="index">
+            <input
+                    (change)="check(node, !node.data.checked)"
+                    type="checkbox"
+                    [indeterminate]="node.data.indeterminate"
+                    [checked]="node.data.checked">
+            <i class='font-blue fa'[ngClass]="{'fa-folder': !node.isExpanded,'fa-folder-open': node.isExpanded}"></i>
+            {{ node.data.name }}
+        </ng-template>
+    </tree-root>
+    <button class="btn btn-warning" (click)="tree.treeModel.collapseAll()">Collapse ALL</button>
+    <button class="btn btn-danger" (click)="tree.treeModel.expandAll()">Expand ALL</button>
+    <button class="btn btn-info" (click)="tree.treeModel.focusNextNode()">next node</button>
+    <button class="btn btn-primary" (click)="tree.treeModel.focusPreviousNode()">previous node</button>
+    <button class="btn btn-success" (click)="tree.treeModel.focusDrillDown()">drill down</button>
+    <button class="btn btn-default" (click)="tree.treeModel.focusDrillUp()">drill up</button>
+</div>

@@ -1,0 +1,15 @@
+<div class="main">
+  <div class="buttons">
+    <button class="btn btn-primary" (click)="progressService.start()">Start</button>
+    <button class="btn btn-info" (click)="progressService.inc(0.2)">Inc(0.2)</button>
+    <button class="btn btn-warning" (click)="progressService.set(0.4)">Set(0.4)</button>
+    <button class="btn btn-success" (click)="progressService.done()">Done</button>
+  </div>
+</div>
+<!--<ng-progress></ng-progress>-->
+<!--leftToRightIncreased, leftToRightReduced , rightToLeftIncreased, rightToLeftReduced.-->
+<ng-progress [positionUsing]="'translate3d'" [minimum]="0.15" [maximum]="1"
+             [speed]="200" [showSpinner]="true" [direction]="'leftToRightIncreased'"
+             [color]="'blue'" [trickleSpeed]="250" [thick]="false"  [ease]="'linear'"
+             [toggle]="true"
+></ng-progress>
