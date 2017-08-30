@@ -4,6 +4,7 @@ import {ConfirmationPopoverModule} from 'angular-confirmation-popover';
 import {FormsModule} from '@angular/forms';
 import {TreeModule} from 'angular-tree-component';
 import {CalendarModule} from 'angular-calendar';
+import {ContextMenuModule} from 'ngx-contextmenu';
 
 import {AngularComponent} from './angular.component';
 import {ConfirmPopoverComponent} from './confirm-popover/confirm-popover.component';
@@ -11,9 +12,11 @@ import {SharedModule} from '../../global/shared.module';
 import {AngularTreeComponent} from './angular-tree/angular-tree.component';
 import {CalendarioComponent} from './calendario/calendario.component';
 
+
 @NgModule({
   imports: [
-    CommonModule, ConfirmationPopoverModule.forRoot(), FormsModule, SharedModule, TreeModule, CalendarModule.forRoot()
+    CommonModule, ConfirmationPopoverModule.forRoot(), FormsModule, SharedModule, TreeModule, CalendarModule.forRoot(),
+    ContextMenuModule
   ],
   declarations: [AngularComponent, ConfirmPopoverComponent, AngularTreeComponent, CalendarioComponent],
   exports: [AngularComponent]

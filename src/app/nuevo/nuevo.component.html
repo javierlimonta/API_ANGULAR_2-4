@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <h1>*ngIf</h1>
+  <div class="row">
+    <div class="col-md-1 form-group-sm">
+      <input class="form-control" type="checkbox" [(ngModel)]="check">
+    </div>
+    <div class="col-md-11">
+      <div *ngIf="check; then yescomponent else nocomponent">
+      </div>
+      <ng-template #yescomponent><h1>YES TEMPLATE</h1></ng-template>
+      <ng-template #nocomponent><h1>NO TEMPLATE</h1></ng-template>
+    </div>
+  </div>
+  <hr><hr>
+  <h1>*ngComponentOutlet</h1>
+  <button class="btn btn-success" (click)="getComponent()">Change Component</button>
+  <ng-container *ngComponentOutlet="wellcome"></ng-container>
+  <hr>
+  <hr>
+  <h1>TITLECASE - PIPE</h1>
+  <h4>{{'new pipe' | titlecase}}</h4>
+</div>

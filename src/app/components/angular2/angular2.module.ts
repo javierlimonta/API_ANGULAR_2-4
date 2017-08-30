@@ -18,7 +18,6 @@ import {BarComponent} from './charts/bar/bar.component';
 import {PieComponent} from './charts/pie/pie.component';
 
 
-
 @NgModule({
   imports: [
     CommonModule, ButtonsModule.forRoot(), FormsModule, SharedModule, SelectModule, ChartsModule
