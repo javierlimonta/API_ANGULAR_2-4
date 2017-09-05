@@ -11,10 +11,19 @@
       <ng-template #nocomponent><h1>NO TEMPLATE</h1></ng-template>
     </div>
   </div>
-  <hr><hr>
+  <hr>
+  <hr>
   <h1>*ngComponentOutlet</h1>
-  <button class="btn btn-success" (click)="getComponent()">Change Component</button>
-  <ng-container *ngComponentOutlet="wellcome"></ng-container>
+  <div class="row">
+    <div class="col-md-6">
+      <div style="margin-bottom: 5px;">
+
+        <button class="btn btn-success" (click)="getComponent()">Change Component</button>
+      </div>
+      <ng-container *ngComponentOutlet="wellcome"></ng-container>
+    </div>
+  </div>
+
   <hr>
   <hr>
   <h1>TITLECASE - PIPE</h1>

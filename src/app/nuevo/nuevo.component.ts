@@ -10,6 +10,7 @@ import {isComponentView} from "@angular/core/src/view/util";
 })
 export class NuevoComponent implements OnInit {
   public wellcome;
+  public numero: number = 20;
   public check: boolean = true;
 
   constructor() {
@@ -24,6 +25,7 @@ export class NuevoComponent implements OnInit {
       this.wellcome = SecondVisitorComponent;
     } else {
       this.wellcome = FirstVisitorComponent;
+      this.wellcome.numero = 11;
     }
   }
 
