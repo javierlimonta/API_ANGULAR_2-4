@@ -1,0 +1,57 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <p>Title to show</p>
+      <input class="form-control" type="text" [(ngModel)]="title">
+    </div>
+    <div class="form-group">
+      <p>Message to show</p>
+      <input class="form-control" type="text" [(ngModel)]="message">
+    </div>
+    <div class="form-group">
+      <p>Time out duration</p>
+      <input class="form-control" type="number" [(ngModel)]="timeout">
+    </div>
+    <div class="form-group">
+      <p>Time out duration</p>
+      <input class="form-control" type="checkbox" [(ngModel)]="closebutton">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="form-group">
+      <p>Position</p>
+      <select class="form-control" name="position" [(ngModel)]="position">
+        <option value="top-left">Top Left</option>
+        <option value="top-center">Top Center</option>
+        <option value="top-right">Top Right</option>
+        <option value="bottom-left">Bottom Left</option>
+        <option value="bottom-center">Bottom Center</option>
+        <option value="bottom-right">Bottom Right</option>
+        <option value="center-center">Center Center</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>Theme</p>
+      <select class="form-control" name="theme" [(ngModel)]="theme">
+        <option value="default">Default</option>
+        <option value="bootstrap">Bootstrap</option>
+        <option value="material">Material</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <p>Type</p>
+      <select class="form-control" name="type" [(ngModel)]="type">
+        <option value="default">Default</option>
+        <option value="info">Info</option>
+        <option value="success">Success</option>
+        <option value="wait">Wait</option>
+        <option value="error">Error</option>
+        <option value="warning">Warning</option>
+      </select>
+    </div>
+  </div>
+  <ng2-toasty [position]="position"></ng2-toasty>
+</div>
+<hr>
+<button class="btn btn-success" (click)="addToast()">Add Toast</button>
+<button class="btn btn-danger" (click)="removeAll()">Remove All Toasts</button>

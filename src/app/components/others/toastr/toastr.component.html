@@ -1,0 +1,202 @@
+<div class="card-body">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="form-group">
+        <label for="toastTitle"><strong>Title</strong></label>
+        <input class="form-control" id="toastTitle" name="toastTitle"
+               placeholder="Toast title" type="text" [(ngModel)]="title">
+      </div>
+      <div class="form-group">
+        <label for="toastMessage"><strong>Message</strong></label>
+        <textarea class="form-control" id="toastMessage" name="toastMessage"
+                  placeholder="Toast message" rows="3" [(ngModel)]="message"></textarea>
+      </div>
+
+      <div class="form-group">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input ng-valid ng-dirty ng-touched" type="checkbox">
+            Enable Html (message)
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="autoDismiss"> Tap to dismiss
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="closeButton"> Close button
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="prevent"> Prevent duplicates
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input ng-untouched ng-pristine ng-valid" type="checkbox"> New toasts on top
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" [(ngModel)]="progressbar"> Progress bar
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-2">
+      <div class="form-group">
+        <label><strong>Timeout</strong></label>
+        <input class="form-control"
+               type="number" [(ngModel)]="timeout">
+        <small class="form-text text-muted" id="toastTimeoutHelp">0 never expires</small>
+      </div>
+      <div class="form-group">
+        <label><strong>Maximum Toasts</strong></label>
+        <input  class="form-control"
+               type="number" [(ngModel)]="maxMessage">
+        <small class="form-text text-muted" id="maxNumberToastsHelp">0 is no limit</small>
+      </div>
+      <div class="form-group">
+        <label for="toastExtendedTimeout"><strong>Extended Timeout</strong></label>
+        <input class="form-control ng-pristine ng-valid ng-touched" id="toastExtendedTimeout" type="text">
+      </div>
+      <div class="checkbox">
+        <label>
+          <input class="form-check-input" type="checkbox"> Auto dismiss on max
+        </label>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-6 col-md-12">
+          <fieldset class="form-group">
+            <label><strong>Toast Type</strong></label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="typeRadios" value="default"
+                       type="radio" [(ngModel)]="type">
+                Default -show
+              </label>
+            </div><div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="typeRadios" value="success"
+                       type="radio" [(ngModel)]="type">
+                Success
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="typeRadios" value="info"
+                       type="radio" [(ngModel)]="type">
+                Info
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="typeRadios" value="warning"
+                       type="radio" [(ngModel)]="type">
+                Warning
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="typeRadios" value="error"
+                       type="radio" [(ngModel)]="type">
+                Error
+              </label>
+            </div>
+          </fieldset>
+        </div>
+        <div class="col-6 col-md-12">
+          <fieldset class="form-group">
+            <label><strong>Toast Position</strong></label>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="positionRadio"
+                       value="toast-top-right" type="radio" [(ngModel)]="position">
+                Top Right
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input name="positionRadio" value="toast-bottom-right" class="form-check-input"
+                       type="radio" [(ngModel)]="position">
+                Bottom Right
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="positionRadio"
+                       value="toast-bottom-left" type="radio" [(ngModel)]="position">
+                Bottom Left
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="positionRadio"
+                       value="toast-top-left" type="radio" [(ngModel)]="position">
+                Top Left
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="positionRadio"
+                       value="toast-top-full-width" type="radio" [(ngModel)]="position">
+                Top Full Width
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="positionRadio"
+                       value="toast-bottom-full-width" type="radio" [(ngModel)]="position">
+                Bottom Full Width
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="positionRadio"
+                       value="toast-top-center" type="radio" [(ngModel)]="position">
+                Top Center
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" name="positionRadio"
+                       value="toast-bottom-center" type="radio" [(ngModel)]="position">
+                Bottom Center
+              </label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <p class="mb-1">
+        <small>Toast Controls:</small>
+      </p>
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-12 col-12 mb-3">
+          <button class="btn btn-primary" type="button" (click)="showToastr()">
+            Open Toast
+          </button>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
+          <button class="btn btn-outline-primary" type="button" (click)="clearLastOne()">
+            Clear Last Toast
+          </button>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6 col-6 mb-3">
+          <button class="btn btn-outline-primary" type="button" (click)="clearAll()">
+            Clear All Toasts
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

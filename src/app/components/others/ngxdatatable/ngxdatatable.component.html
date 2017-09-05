@@ -1,0 +1,58 @@
+<div class="row">
+
+  <button class="btn btn-info" (click)="pushRow()">Push</button>
+  <button class="btn btn-info" (click)="seletedRows()">Selected</button>
+  <!--[selectionType]="'single' | multiClick | multi | checkbox"-->
+
+  <ngx-datatable [columnMode]="'force'" class="material" [rows]="rows"
+                 [columns]="columns"
+                 [reorderable]="true" [rowHeight]="'auto'" [selected]="selected"
+                 [selectionType]="'multi'"
+                 [count]="totalElements"
+                 [offset]="pageNumber"
+                 [limit]="size"
+                 [headerHeight]="50"
+                 [footerHeight]="50"
+                 [rowHeight]="'auto'"
+                 [externalPaging]="true"
+                 (page)='setPage($event)'
+                 (select)='onSelect($event)'
+                 (activate)="onActivate($event)"
+  ></ngx-datatable>
+
+  <!--<ngx-datatable-->
+    <!--style="width: 90%"-->
+    <!--class="material"-->
+    <!--[rows]="rows"-->
+    <!--[columnMode]="'force'"-->
+    <!--[headerHeight]="50"-->
+    <!--[footerHeight]="50"-->
+    <!--[rowHeight]="'auto'"-->
+    <!--[limit]="5"-->
+    <!--[selected]="selected"-->
+    <!--[selectionType]="'checkbox'"-->
+    <!--(activate)="onActivate($event)"-->
+    <!--(select)='onSelect($event)'>-->
+    <!--<ngx-datatable-column-->
+      <!--[width]="30"-->
+      <!--[sortable]="false"-->
+      <!--[canAutoResize]="false"-->
+      <!--[draggable]="false"-->
+      <!--[resizeable]="false"-->
+      <!--[headerCheckboxable]="true"-->
+      <!--[checkboxable]="true">-->
+    <!--</ngx-datatable-column>-->
+    <!--<ngx-datatable-column name="Name"></ngx-datatable-column>-->
+    <!--<ngx-datatable-column name="Gender"></ngx-datatable-column>-->
+    <!--<ngx-datatable-column name="Company"></ngx-datatable-column>-->
+  <!--</ngx-datatable>-->
+  <div class='selected-column'>
+    <h4>Selections <small>({{selected?.length}})</small></h4>
+    <ul>
+      <li *ngFor='let sel of selected'>
+        {{sel.name}}
+      </li>
+      <li *ngIf="!selected?.length">No Selections</li>
+    </ul>
+  </div>
+</div>
